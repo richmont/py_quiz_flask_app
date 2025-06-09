@@ -1,3 +1,4 @@
+from typing import List
 from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped
@@ -16,3 +17,5 @@ class QuizQuestion(Base):
 
     quiz_id: Mapped[int] = mapped_column(ForeignKey("quiz.id"))
     quiz = relationship("Quiz",back_populates="quiz_question")
+
+    quiz_answer: Mapped[List["QuizAnswer"]] = relationship(back_populates="quiz_question")

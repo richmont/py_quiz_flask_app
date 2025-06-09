@@ -1,4 +1,4 @@
-from models import Quiz,QuizQuestion
+from models import Quiz,QuizQuestion, QuizAnswer
 
 
 
